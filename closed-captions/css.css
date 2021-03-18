@@ -5,11 +5,62 @@ Show them when they receive the class 'on'
 Hide them when they receive the class 'off'
 Feel free to adjust the defaults to your needs.
 ********************************************** */
+body {
+	background: black;
+	margin-top: 135px;
+}
+
+.videoplayer {
+	background-color: black;
+	width: 1150px;
+	height: 32vw;
+	margin-left: 393.5px;
+}
+#video-placeholder {
+	margin: auto;
+	margin-top: 10em;
+	display: block;
+	display: flex;
+	justify-content: center;
+	width: 1000px;
+	height: 564px;
+}
+
+#soundcaptions {
+	margin: auto;
+	display: block;
+	display: flex;
+	margin-top: -2.5em;
+	justify-content: center;
+	z-index: 200;
+    font-size: 1.2em;
+}
+
+#soundcaptions p {
+	position: absolute;
+	text-align: center;
+    opacity: 0;
+    color: yellow;
+    font-family: "Brenner Light";
+    font-size: 20px;
+}
+
+
+#closed-captions {
+	margin: auto;
+	display: block;
+	display: flex;
+	margin-top: -2em;
+	justify-content: center;
+}
 #closed-captions p {
 	opacity: 0;
 	transition: .05s;
+	text-align: center;
 	position: absolute;
+	width: 1000px;
 }
+
 #closed-captions .on {
 	opacity: 1;
 }
@@ -17,82 +68,26 @@ Feel free to adjust the defaults to your needs.
 	transition: .2s;
 	opacity: 0;
 }
-.voice1 {
-	font-style: italic;
-}
 
-/* **********************************************
-The first paragraph, with extended timing for 
-	all siblings. Basically what it does is that
-	it shows the text after a delay, which 
-	corresponds with the time that the word is
-	spoken.
-You probably want to change the styling.
-********************************************** */
-.p0 span {
-	opacity: 0;
-	font-family: brenner;
+.voice1 {
+	font-family: Brenner Mono Medium;
+	color: white;
+	font-size: 20px;
 }
-.p0.on span:first-of-type {
-	opacity: 1;
-	transition: 0s;
-	font-weight: 200;
+.voice2 {
+	font-family: Brenner Sans Medium;
+	color: white;
+	font-size: 20px;
 }
-.p0.on span:nth-of-type(2) {
-	opacity: 1;
-	transition: 0s .4s;
-	margin-right: -.25em;
-	font-weight: 400;
+.voice3 {
+	font-family: Brenner Sans Light;
+	color: lightgray;
+	font-size: 20px;
 }
-.p0.on span:nth-of-type(3) {
-	opacity: 1;
-	transition: 0s .5s;
-	margin-right: -.25em;
-	font-weight: 600;
-}
-.p0.on span:nth-of-type(4) {
-	opacity: 1;
-	transition: 0s .7s;
-	margin-right: -.25em;
-	font-weight: 800;
-}
-.p0.on span:nth-of-type(5) {
-	opacity: 1;
-	transition: 0s 1.1s;
-	margin-right: -.25em;
-	font-family: "brenner sans";
-}
-.p0.on span:nth-of-type(6) {
-	opacity: 1;
-	transition: 0s 1.4s;
-	margin-right: -.25em;
-	font-family: "brenner display";
-}
-.p0.on span:nth-of-type(7) {
-	opacity: 1;
-	transition: 0s 1.7s;
-	margin-right: -.25em;
-	font-family: "brenner script";
-}
-.p0.on span:nth-of-type(8) {
-	opacity: 1;
-	transition: 0s 2s;
-	font-family: "brenner script";
-}
-.p0.on span:nth-of-type(9) {
-	opacity: 1;
-	transition: 0s 3s;
-	font-family: "brenner Sans condensed";
-}
-.p0.on span:nth-of-type(10) {
-	opacity: 1;
-	transition: 0s 3.2s;
-	font-family: "brenner mono";
-}
-.p0.on span:nth-of-type(11) {
-	opacity: 1;
-	transition: 0s 3.7s;
-	font-family: "brenner slab";
+.voice4 {
+	font-family: Brenner Mono Medium;
+	color: white;
+	font-size: 20px;
 }
 
 /* **********************************************
@@ -102,15 +97,322 @@ Sounds.
 	a sound starts.
 *********************************************  */
 
-/* The moment the class .sound1 is added to the body, the background is yellow */
-.sound1 {
-	background: yellow;
+/* The moment the class .sound1 is added to the body, the movie shakes */
+.sound0 {
+	animation: music 20s linear;
 }
 
-iframe {
-	transition: 1s;
-}
-/* The moment the class .sound1 is added to the body, the movie makes a turn */
 .sound1 iframe {
-	transform: rotate(1turn);
+	animation: shake 0.5s;
+}
+.sound1 {
+	animation: alarmsound 20s linear;
+}
+
+.sound2 {
+	animation: sirensound 5s linear;
+}
+
+.sound3 iframe {
+	animation: buzz 1s;
+}
+
+.sound4 {
+	animation: beepsound 10s linear;
+}
+
+.sound5 iframe {
+	animation: buzz2 1s;
+}
+
+.sound6 {
+	animation: beepsound2 10s linear;
+}
+
+.sound7 iframe {
+	animation: buzz3 1s;
+}
+
+.sound8 {
+	animation: beepsound3 10s linear;
+}
+
+.sound9 iframe {
+	animation: tension 43s;
+}
+.sound9 {
+	animation: constantbeepsound 43s;
+}
+
+.sound10 {
+    animation: dramaticmusicsound 19s;
+}
+
+.sound11 iframe {
+	animation: beepingsound 1s;
+}
+
+.sound11 {
+	animation: beepingsounda 2s;
+}
+
+.sound12 {
+	animation: dramaticmusiccsound 12s;
+}
+.sound13 {
+	animation: dramaticmusicintensesound 22s;
+}
+
+.sound0 #soundcaptions .dramaticmusic {
+    animation: fadesound 8s;
+}
+.sound1 #soundcaptions .alarm {
+    animation: fadesound 2s;
+}
+.sound2 #soundcaptions .siren {
+    animation: fadesound 1s;
+}
+.sound3 #soundcaptions .buzz {
+    animation: fadesound 1.4s;
+}
+.sound4 #soundcaptions .beep {
+    animation: fadesound 1.5s;
+}
+.sound5 #soundcaptions .buzz2 {
+    animation: fadesound 1.4s;
+}
+.sound6 #soundcaptions .beep2 {
+    animation: fadesound 1.5s;
+}
+.sound7 #soundcaptions .buzz3 {
+    animation: fadesound 1.3s;
+}
+.sound8 #soundcaptions .beep3 {
+    animation: fadesound 1.5s;
+}
+.sound8 #soundcaptions .constantbeep {
+    opacity: 1;
+    transition: 1s;
+    transition-delay: 1s;
+}
+.sound9 #soundcaptions .constantbeep {
+    transition-delay: 41s;
+    transition-duration: 1;
+    opacity: 0;
+}
+
+.sound10 #soundcaptions .intensemusic {
+    transition-duration: 1;
+    opacity: 1;
+}
+
+.sound11 #soundcaptions .intensemusic {
+    transition-duration: 1;
+    opacity: 0;
+}
+
+.sound11 #soundcaptions .beeping {
+    animation: fadesound 1.8s;
+}
+
+.sound12 #soundcaptions .intensemusicc {
+    transition-duration: 1;
+    opacity: 1;
+}
+
+.sound13 #soundcaptions .intensemusicc {
+    transition-duration: 1;
+    opacity: 0;
+}
+.sound13 #soundcaptions .intensify {
+    animation: fadesound 16s;
+}
+
+
+
+/* Keyframes for animations*/
+@keyframes music {
+	0% {background-color: black;}
+	25% {background-color: #12444A;}
+	50% {background-color: #185A61;}
+	75% {background-color: #12444A;}
+	100% {background-color: black;}
+}
+
+@keyframes alarmsound {
+	0% {background-color: black;}
+	5% {background-color: #820101;}
+	10% {background-color: black;}
+	100% {background-color: black;}
+}
+
+@keyframes sirensound {
+	0% {background-color: black;}
+	10% {background-color: #820101;}
+	15% {background-color: black}
+	20% {background-color: #00008E;}
+	25% {background-color: black}
+	100% {background-color: black;}
+
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes buzz {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-2px, 0px) rotate(1deg); }
+  30% { transform: translate(2px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-2px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes beepsound {
+	0% {background-color: black;}
+	5% {background-color: white;}
+	10% {background-color: black;}
+	100% {background-color: black;}
+}
+
+@keyframes buzz2 {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-2px, 0px) rotate(1deg); }
+  30% { transform: translate(2px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-2px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes beepsound2 {
+	0% {background-color: black;}
+	5% {background-color: white;}
+	10% {background-color: black;}
+	100% {background-color: black;}
+}
+
+@keyframes buzz3 {
+  0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+  10% { transform: translate(-0.5px, -1px) rotate(-0.5deg); }
+  20% { transform: translate(-1px, 0px) rotate(0.5deg); }
+  30% { transform: translate(1px, 1px) rotate(0deg); }
+  40% { transform: translate(0.5px, -0.5px) rotate(0.5deg); }
+  50% { transform: translate(-0.5px, 1px) rotate(-0.5deg); }
+  60% { transform: translate(-1px, 0.5px) rotate(0deg); }
+  70% { transform: translate(1px, 0.5px) rotate(-0.5deg); }
+  80% { transform: translate(-0.5px, -0.5px) rotate(0.5deg); }
+  90% { transform: translate(0.5px, 1px) rotate(0deg); }
+  100% { transform: translate(0.5px, -1px) rotate(-0.5deg); }
+}
+
+@keyframes beepsound3 {
+	0% {background-color: black;}
+	5% {background-color: white;}
+	10% {background-color: black;}
+	100% {background-color: black;}
+}
+
+@keyframes tension {
+  0% {filter: brightness(100%); }
+  100% {filter: brightness(35%); }
+}
+
+@keyframes constantbeepsound {
+  0% {background-color: black;}
+  100% {background-color: white;}
+}
+
+@keyframes fadesound {
+    0% {opacity: 1;
+		filter: brightness(100%)}
+    75% {opacity: 1;
+		filter: brightness(100%)}
+    100% {opacity: 0;
+		filter: brightness(100%)}
+}
+
+@keyframes beepingsound {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-2px, 0px) rotate(1deg); }
+  30% { transform: translate(2px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-2px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes beepingsounda {
+  0% {background-color: #1F1E1E;}
+  10% {background-color: black;}
+  20% {background-color: #1F1E1E;}
+  30% {background-color: black;}
+  40% {background-color: #1F1E1E;}
+  50% {background-color: black;}
+  }
+
+@keyframes dramaticmusicsound {
+  0% {background-color: black;}
+  10% {background-color: #8E6F00;}
+  20% {background-color: black;}
+  30% {background-color: #C84E06;}
+  40% {background-color: black;}
+  50% {background-color: black;}
+  60% {background-color: #C9AB00;}
+  70% {background-color: black;}
+  80% {background-color: #C84E06;}
+  90% {background-color: black;}
+  100% {background-color: black;}
+}
+
+@keyframes dramaticmusiccsound {
+  0% {background-color: black;}
+  10% {background-color: #C9AB00;}
+  20% {background-color:#C9AB00;}
+  30% {background-color: black;}
+  40% {background-color: black;}
+  50% {background-color: black;}
+  60% {background-color: #C84E06;}
+  70% {background-color: #C84E06;}
+  80% {background-color: #C84E06;}
+  90% {background-color: #C84E06;}
+  100% {background-color: #C84E06;}
+}
+
+@keyframes dramaticmusicintensesound {
+  0% {background-color: #C84E06;}
+  10% {background-color: #C9AB00;}
+  20% {background-color: black;}
+  30% {background-color: #C84E06;}
+  40% {background-color: #CC0000;}
+  50% {background-color: #C82A06;}
+  60% {background-color: black;}
+  70% {background-color: #CC0000;}
+  80% {background-color: #CC0000;}
+  90% {background-color: #CC0000;}
+  100% {background-color: black;}
 }
